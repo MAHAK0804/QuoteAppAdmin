@@ -34,7 +34,7 @@ const AdminLogin = () => {
       setLoading(true);
       try {
         const res = await axios.post(
-          "https://hindishayari.onrender.com/api/admin/login",
+          "https://quoteappserver.onrender.com/api/admin/login",
           values
         );
         const { token } = res.data;
@@ -80,11 +80,10 @@ const AdminLogin = () => {
             <input
               type="email"
               name="email"
-              className={`w-full px-3 py-2 border rounded outline-none focus:ring-2 focus:ring-[#800000] ${
-                formik.touched.email && formik.errors.email
-                  ? "border-red-500"
-                  : "border-gray-300"
-              }`}
+              className={`w-full px-3 py-2 border rounded outline-none focus:ring-2 focus:ring-[#800000] ${formik.touched.email && formik.errors.email
+                ? "border-red-500"
+                : "border-gray-300"
+                }`}
               value={formik.values.email}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -103,11 +102,10 @@ const AdminLogin = () => {
               <input
                 type={showPassword ? "text" : "password"}
                 name="password"
-                className={`w-full px-3 py-2 border rounded outline-none focus:ring-2 focus:ring-[#800000] ${
-                  formik.touched.password && formik.errors.password
-                    ? "border-red-500"
-                    : "border-gray-300"
-                }`}
+                className={`w-full px-3 py-2 border rounded outline-none focus:ring-2 focus:ring-[#800000] ${formik.touched.password && formik.errors.password
+                  ? "border-red-500"
+                  : "border-gray-300"
+                  }`}
                 value={formik.values.password}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}

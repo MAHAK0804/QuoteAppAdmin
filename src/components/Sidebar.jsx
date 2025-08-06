@@ -11,7 +11,7 @@ const COLORS = {
 const links = [
   { name: "Dashboard", path: "/dashboard" },
   { name: "Categories", path: "/categories" },
-  { name: "Shayaris", path: "/shayaris" },
+  { name: "Quotes", path: "/quotes" },
 ];
 
 const Sidebar = () => {
@@ -33,7 +33,7 @@ const Sidebar = () => {
         className="p-6 text-2xl font-bold tracking-wide border-b border-gray-200"
         style={{ color: COLORS.maroon }}
       >
-        ✍ हिंदी शायरी
+
         <div className="text-sm font-normal text-gray-400">Admin Panel</div>
       </div>
 
@@ -48,11 +48,10 @@ const Sidebar = () => {
               )}
               <Link
                 to={link.path}
-                className={`block px-6 py-3 transition-all font-medium rounded-l-full ${
-                  isActive
-                    ? "bg-[#800000] text-white shadow-sm"
-                    : "text-gray-700 hover:bg-gray-100 hover:text-[#800000]"
-                }`}
+                className={`block px-6 py-3 transition-all font-medium rounded-l-full ${isActive
+                  ? "bg-[#800000] text-white shadow-sm"
+                  : "text-gray-700 hover:bg-gray-100 hover:text-[#800000]"
+                  }`}
               >
                 {link.name}
               </Link>
@@ -73,7 +72,7 @@ const Sidebar = () => {
 
       {/* Footer */}
       <div className="p-4 text-xs text-center text-gray-400 border-t border-gray-200">
-        © 2025 Shayari Admin
+        © 2025 Quotes Admin
       </div>
     </div>
   );

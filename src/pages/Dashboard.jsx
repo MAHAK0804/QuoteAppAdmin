@@ -34,8 +34,9 @@ const Dashboard = () => {
       const [statsRes, chartRes, recentRes] = await Promise.all([
         axiosInstance.get("/dashboard/stats"),
         axiosInstance.get("/dashboard/chart"),
-        axiosInstance.get("/dashboard/recent-shayaris"),
+        axiosInstance.get("/dashboard/recent-quotes"),
       ]);
+      console.log(statsRes.data);
 
       setStats(statsRes.data);
       setChartData(chartRes.data);
@@ -85,7 +86,7 @@ const Dashboard = () => {
         style={{ backgroundColor: COLORS.background }}
       >
         <h1 className="text-4xl font-bold text-[#800000] mb-10 tracking-wide">
-          📊 Hindi Shayari Admin Dashboard
+          📊 Quotes Admin Dashboard
         </h1>
 
         {/* Stats Section */}
@@ -115,7 +116,7 @@ const Dashboard = () => {
           style={{ backgroundColor: COLORS.cardBg }}
         >
           <h2 className="text-2xl font-semibold text-[#800000] mb-6">
-            📈 Shayari Stats by Category
+            📈 Quotes Stats by Category
           </h2>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={chartData} barCategoryGap={30}>
@@ -138,7 +139,7 @@ const Dashboard = () => {
           style={{ backgroundColor: COLORS.cardBg }}
         >
           <h2 className="text-2xl font-semibold text-[#800000] mb-6">
-            📝 Recent Shayaris
+            📝 Recent Quotes
           </h2>
           <ul className="space-y-4">
             {recentShayaris.map((shayari, i) => (

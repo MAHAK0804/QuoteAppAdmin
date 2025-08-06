@@ -38,8 +38,10 @@ const Shayaris = () => {
   const fetchShayaris = async () => {
     try {
       setLoading(true);
-      const res = await axiosInstance.get("/shayaris");
-      setShayaris(res.data);
+      const res = await axiosInstance.get("/quotes");
+      console.log(res.data);
+
+      setShayaris(res.data.quotes);
     } catch (err) {
       console.error("Error fetching shayaris:", err);
     } finally {
@@ -99,7 +101,7 @@ const Shayaris = () => {
   const handleDelete = async (id) => {
     try {
       setLoading(true);
-      await axiosInstance.delete(`/shayaris/${id}`);
+      await axiosInstance.delete(`/quotes/${id}`);
       await fetchShayaris();
     } catch (err) {
       console.error("Error deleting shayari:", err);
@@ -258,11 +260,10 @@ const Shayaris = () => {
               <button
                 key={i}
                 onClick={() => setCurrentPage(i + 1)}
-                className={`px-3 py-1 rounded-full text-sm ${
-                  currentPage === i + 1
-                    ? "bg-[#800000] text-white"
-                    : "bg-gray-100"
-                }`}
+                className={`px-3 py-1 rounded-full text-sm ${currentPage === i + 1
+                  ? "bg-[#800000] text-white"
+                  : "bg-gray-100"
+                  }`}
               >
                 {i + 1}
               </button>
