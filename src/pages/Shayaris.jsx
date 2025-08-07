@@ -186,7 +186,7 @@ const Shayaris = () => {
             }}
             className="bg-[#800000] hover:bg-[#a32d2d] text-white px-5 py-2 rounded-lg shadow transition"
           >
-            ➕ Add Shayari
+            ➕ Add Quotes
           </button>
         </div>
 
@@ -198,7 +198,7 @@ const Shayaris = () => {
               <thead className="bg-gray-100 text-sm text-gray-600">
                 <tr>
                   <th className="p-4 text-left">Category</th>
-                  <th className="p-4 text-left">Shayari</th>
+                  <th className="p-4 text-left">Quotes</th>
                   <th className="p-4 text-right">Actions</th>
                 </tr>
               </thead>
@@ -237,7 +237,7 @@ const Shayaris = () => {
                 {shayaris.length === 0 && (
                   <tr>
                     <td colSpan={3} className="p-6 text-center text-gray-500">
-                      No Shayaris available.
+                      No Quotes available.
                     </td>
                   </tr>
                 )}
@@ -292,7 +292,7 @@ const Shayaris = () => {
             value={form.content}
             onChange={(e) => setForm({ ...form, content: e.target.value })}
             className="w-full border border-gray-300 focus:border-[#800000] focus:ring-[#800000] mb-3 p-2 rounded outline-none"
-            placeholder="Shayari text"
+            placeholder="Quotes text"
           ></textarea>
           <label className="block mb-2 text-sm font-medium text-gray-700">
             Category
