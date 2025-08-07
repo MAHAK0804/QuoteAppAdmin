@@ -67,12 +67,12 @@ const Shayaris = () => {
     try {
       setLoading(true);
       if (form.id) {
-        await axiosInstance.put(`/shayaris/${form.id}`, {
+        await axiosInstance.put(`/quotes/${form.id}`, {
           text: form.content,
           categoryId: form.categoryId,
         });
       } else {
-        await axiosInstance.post("/shayaris", {
+        await axiosInstance.post("/quotes", {
           text: form.content,
           categoryId: form.categoryId,
         });
@@ -285,7 +285,7 @@ const Shayaris = () => {
           onSave={handleSave}
         >
           <h2 className="text-xl font-semibold text-[#800000] mb-4">
-            {form.id ? "✏️ Edit" : "➕ Add"} Shayari
+            {form.id ? "✏️ Edit" : "➕ Add"} Quotes
           </h2>
           <textarea
             rows={4}
