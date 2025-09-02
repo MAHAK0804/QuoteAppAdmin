@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create axios instance
 const axiosInstance = axios.create({
-  baseURL: "https://quoteappserver.onrender.com/api", // ✅ Change to your actual base URL
+  baseURL: "http://localhost:8000/api", // ✅ Change to your actual base URL
   headers: {
     "Content-Type": "application/json",
   },

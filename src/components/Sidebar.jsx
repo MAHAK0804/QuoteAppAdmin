@@ -12,6 +12,10 @@ const links = [
   { name: "Dashboard", path: "/dashboard" },
   { name: "Categories", path: "/categories" },
   { name: "Quotes", path: "/quotes" },
+  { name: "Explore", path: "/explore" },
+  { name: "Sound", path: "/sound" },
+
+
 ];
 
 const Sidebar = () => {

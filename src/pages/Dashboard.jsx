@@ -36,7 +36,7 @@ const Dashboard = () => {
         axiosInstance.get("/dashboard/chart"),
         axiosInstance.get("/dashboard/recent-quotes"),
       ]);
-      console.log(statsRes.data);
+      console.log("data", chartRes.data);
 
       setStats(statsRes.data);
       setChartData(chartRes.data);
@@ -125,7 +125,7 @@ const Dashboard = () => {
               <YAxis />
               <Tooltip />
               <Bar
-                dataKey="shayaris"
+                dataKey="quotes"
                 fill={COLORS.maroon}
                 radius={[10, 10, 0, 0]}
               />

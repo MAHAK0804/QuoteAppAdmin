@@ -124,12 +124,17 @@ const Shayaris = () => {
     if (sortOrder === "asc") return a.text.localeCompare(b.text);
     return b.text.localeCompare(a.text);
   });
+  console.log(sorted.length);
 
   const totalPages = Math.ceil(sorted.length / PAGE_SIZE);
+  console.log(currentPage);
+
   const paginated = sorted.slice(
     (currentPage - 1) * PAGE_SIZE,
     currentPage * PAGE_SIZE
   );
+
+  console.log(paginated);
 
   return (
     <>

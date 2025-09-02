@@ -34,7 +34,7 @@ const AdminLogin = () => {
       setLoading(true);
       try {
         const res = await axios.post(
-          "https://quoteappserver.onrender.com/api/admin/login",
+          "http://localhost:8000/api/admin/login",
           values
         );
         const { token } = res.data;

@@ -5,6 +5,8 @@ import Dashboard from "./pages/Dashboard";
 import Categories from "./pages/Categories";
 import Shayaris from "./pages/Shayaris";
 import AdminLogin from "./pages/Login";
+import Explore from "./pages/Explore";
+import SoundManager from "./pages/Sound";
 
 const App = () => {
   return (
@@ -17,6 +19,10 @@ const App = () => {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/quotes" element={<Shayaris />} />
+          <Route path="/explore" element={<Explore />} />
+          <Route path="/sound" element={<SoundManager />} />
+
+
         </Routes>
         {/* </div> */}
       </div>
