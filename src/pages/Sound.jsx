@@ -27,7 +27,7 @@ export default function SoundManager() {
     }, []);
 
     const fetchSounds = async () => {
-        const res = await axios.get("http://localhost:8000/api/sounds");
+        const res = await axios.get("https://quoteappserver.onrender.com/api/sounds");
         setSounds(res.data);
     };
 
@@ -43,7 +43,7 @@ export default function SoundManager() {
         formData.append("title", title);
 
         setLoading(true);
-        await axios.post("http://localhost:8000/api/sounds", formData, {
+        await axios.post("https://quoteappserver.onrender.com/api/sounds", formData, {
             headers: { "Content-Type": "multipart/form-data" },
         });
         setLoading(false);
@@ -56,7 +56,7 @@ export default function SoundManager() {
     // ✅ Delete sound
     const handleDelete = async (id) => {
         if (!window.confirm("Are you sure you want to delete this sound?")) return;
-        await axios.delete(`http://localhost:8000/api/sounds/${id}`);
+        await axios.delete(`https://quoteappserver.onrender.com/api/sounds/${id}`);
         fetchSounds();
     };
 
@@ -79,7 +79,7 @@ export default function SoundManager() {
 
         setUpdating(true);
         await axios.put(
-            `http://localhost:8000/api/sounds/${editingSound._id}`,
+            `https://quoteappserver.onrender.com/api/sounds/${editingSound._id}`,
             formData,
             {
                 headers: { "Content-Type": "multipart/form-data" },

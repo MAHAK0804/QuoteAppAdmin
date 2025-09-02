@@ -18,7 +18,7 @@ export default function ImageCrudPage() {
     const [editId, setEditId] = useState(null);
 
     const fetchImages = async () => {
-        const res = await axios.get("http://localhost:8000/api/explore");
+        const res = await axios.get("https://quoteappserver.onrender.com/api/explore");
         setImages(res.data);
     };
 
@@ -30,12 +30,12 @@ export default function ImageCrudPage() {
         setLoading(true);
         try {
             if (editId) {
-                await axios.put(`http://localhost:8000/api/explore/${editId}`, formData, {
+                await axios.put(`https://quoteappserver.onrender.com/api/explore/${editId}`, formData, {
                     headers: { "Content-Type": "multipart/form-data" },
                 });
                 setEditId(null);
             } else {
-                await axios.post("http://localhost:8000/api/explore", formData, {
+                await axios.post("https://quoteappserver.onrender.com/api/explore", formData, {
                     headers: { "Content-Type": "multipart/form-data" },
                 });
             }
@@ -49,7 +49,7 @@ export default function ImageCrudPage() {
 
     const handleDelete = async (id) => {
         if (!window.confirm("Delete this image?")) return;
-        await axios.delete(`http://localhost:8000/api/explore/${id}`);
+        await axios.delete(`https://quoteappserver.onrender.com/api/explore/${id}`);
         fetchImages();
     };
 
