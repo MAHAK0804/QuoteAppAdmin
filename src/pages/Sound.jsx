@@ -33,8 +33,8 @@ export default function SoundManager() {
 
     // ✅ Upload sound
     const handleUpload = async () => {
-        if (!file || !title || !image) {
-            alert("Please add title, sound file & image");
+        if (!file || !title) {
+            alert("Please add title, sound file");
             return;
         }
         const formData = new FormData();
